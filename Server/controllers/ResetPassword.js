@@ -1,8 +1,9 @@
 
-const { response } = require("express");
+
 const User = require("../models/User");
 const mailSender = require("../utils/mailSender");
 const bcrypt = require("bcrypt");
+const crypto = require("crypto");
 
 //resetPasswordToken - this is sending the mail of frontened ui
 
@@ -17,33 +18,37 @@ exports.resetPasswordToken = async(req,res) => {
         if(!user){
             return res.status(400).json({
                 success:false,
-                message : 'your email is not registered with us',
+                message : `This Email: ${email} is not Registered With Us Enter a Valid Email `,
             })
         }
 
         //generate token - because on basis of token link of url will be generated
-        const token = crypto.randomUUID();
+        const token = crypto.randomBytes(20).toString("hex");
 
         //it should not be like the same url is used everytime to reset password it should have some expiration time 
         //the link generated should be unique for everyone hence token is used 
 
         //update user by adding token and expiration time
-        const updatedDetails = await User.findByIdAndUpdate({email:email},
+        const updatedDetails = await User.findOneAndUpdate(
+            {email:email},
             {
                 token : token , //by this we are storing token in user body so that we can reset password on the basis token
-                resetPasswordExpires: Date.now() + 5*60*1000,
+                resetPasswordExpires: Date.now() + 3600000,
             },
             {new : true});
+        console.log("updated details is : ",updatedDetails);
 
         //create url
         const url = `http://localhost:3000/update-password/${token}` //this is frontened url as it runs on 3000 port
 
         //send email containing url
-        await mailSender(email,"password Reset link",
-                        `password Reset link : ${url}`);
+        await mailSender(
+            email,
+            "password Reset link",
+            `Your Link for email verification is ${url}. Please click this url to reset your password.`);
 
         //return response 
-        return response.json({
+        return res.json({
             success:true,
             message : "mail sent successfully please check email and change password",
         })
@@ -52,7 +57,7 @@ exports.resetPasswordToken = async(req,res) => {
         console.log(error);
         return res.status(500).json({
             success: false,
-            message : "something went wrong while reseting the password",
+            message : "something went wrong while resetting the password",
         })
     }
 }
@@ -69,7 +74,7 @@ exports.resetPassword = async(req,res) => {
         if(password !== confirmPassword){
             return res.json({
                 success: false,
-                message : 'password not matching'
+                message : 'password and confirm password not matching'
             });
         }
 
@@ -85,7 +90,7 @@ exports.resetPassword = async(req,res) => {
         }
 
         // check time of token 
-        if(userDetails.resetPasswordExpires < Date.now()){
+        if(!(userDetails.resetPasswordExpires) > Date.now()){
                 return res.json({
                     success: false,
                     message : 'token is expired plz regenerate the token',

@@ -20,7 +20,7 @@ exports.auth = async(req,res,next) => {
 
         //verify the token
         try{
-            const decode =  jwt.verify(token, process.env,JWT_SECRET);
+            const decode =  jwt.verify(token, process.env.JWT_SECRET);
             console.log(decode);
             req.user = decode;
         }
@@ -47,7 +47,7 @@ exports.isStudent = async(req,res,next) => {
         //second type is by extracting account type from db
         
         if(req.user.accountType !== "Student"){
-            return res.satus(401).json({
+            return res.status(401).json({
                 success: false,
                 message: 'this is a protected route for students only',
             });

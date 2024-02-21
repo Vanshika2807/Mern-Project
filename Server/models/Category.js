@@ -8,10 +8,11 @@ const tagsSchema = new mongoose.Schema({
     description: {
         type:String,
     },
-    course: {
+    course: [{
         type:mongoose.Schema.Types.ObjectId,
-        ref:"Course",
-    },
+        ref:"Course", 
+        //here created an array of course as a tag can have different courses
+    }],
 });
 
-module.exports = mongoose.model("Tag", tagsSchema);
+module.exports = mongoose.model("Category", tagsSchema);

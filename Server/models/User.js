@@ -31,13 +31,14 @@ const userSchema = new mongoose.Schema({
         required: true,
         ref: "Profile",
     },
+    
     courses : {
         type : mongoose.Schema.Types.ObjectId,
         ref: "Course",
     },
     image : {
         type : String, //here type is String as it is url
-        required: trusted,
+        required: true,
     },
     token:{
         type:String,
@@ -45,14 +46,18 @@ const userSchema = new mongoose.Schema({
     resetPasswordExpires: {
         type : Date,
     },
+    //we have added token and resetPasswordExpires bcoz we want to generate a link to reset password which would be generated according to this unique token 
+    //and saved in db also
+    
     courseProgress: [
         {
             type : mongoose.Schema.Types.ObjectId,
             ref: "CourseProgress",
         }
     ]
-
-
-});
+		// Add timestamps for when the document is created and last modified
+    },
+    { timestamps: true }
+);
 
 module.exports = mongoose.model("User", userSchema);
