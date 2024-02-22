@@ -19,14 +19,20 @@ exports.createSection = async(req,res) => {
         const newSection = await Section.create({sectionName});
 
         //update the course with section Object id
-        const updatedCourseDetails = await Course.findByIdAndUpdate({courseId},
+        const updatedCourseDetails = await Course.findByIdAndUpdate(
+            courseId,
             {
                 $push:{
                     courseContent : newSection._id,
                 }
-            }, {new : true});
-
-        //HW use populate to replace section and subsection in updated course details 
+            }, {new : true})
+            .populate({
+				path: "courseContent",
+				populate: {
+					path: "subSection",
+				},
+			})
+			.exec();
 
         //return response
         return res.status(200).json({
@@ -78,7 +84,7 @@ exports.updateSection = async(req,res) => {
 exports.deleteSection = async(req,res) => {
     try{
         //get id assuming that we are sending id in params
-        const {sectionId} = req.params;
+        const {sectionId} = req.body;
 
         //delete section
         await Section.findByIdAndDelete(sectionId);
