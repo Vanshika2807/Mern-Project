@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import {Link} from "react-router-dom"
 
 const Button = ({children, active, linkto}) => {
   return (
@@ -13,10 +13,6 @@ const Button = ({children, active, linkto}) => {
         </div>
 
     </Link>
-    // childern are learn more and book a demo
-    //active is to identify whether black or yellow colour given
-    //linkto is to on that particular path when button is clicked 
-
   )
 }
 
