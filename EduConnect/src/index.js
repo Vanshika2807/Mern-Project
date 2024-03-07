@@ -8,25 +8,21 @@ import rootReducer from "./reducer";
 import {configureStore} from "@reduxjs/toolkit"
 import { Toaster } from "react-hot-toast";
 
+
 const store = configureStore({
   reducer:rootReducer,
-})
-
-// in reducer we will combine all slices
+});
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-
-    <Provider store = {store}>
-      <BrowserRouter>
-    
-            <App />
+  <Provider store = {store}>
+    <BrowserRouter>
+        <App />
         <Toaster/>
       </BrowserRouter>
-    </Provider>
+  </Provider>
     
-    {/* wrap the app with provider and pass store in it . provider is used to link react with redux*/}
-   
+    
   </React.StrictMode>
 );
