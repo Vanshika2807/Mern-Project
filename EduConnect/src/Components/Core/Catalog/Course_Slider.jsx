@@ -1,17 +1,14 @@
 import React, { useEffect, useState } from "react"
 // Import Swiper React components
-import { Swiper, SwiperSlide } from "swiper/react"
+// import { Swiper, SwiperSlide } from "swiper/react"
 
-// Import Swiper styles
+// // Import Swiper styles
 // import "swiper/css"
-import 'swiper/swiper-bundle.min.css'
-import 'swiper/swiper.min.css'
-import 'swiper/components/pagination/pagination.min.css'; 
-import "swiper/css/free-mode"
-import "swiper/css/pagination"
-// import "../../.."
-// Import required modules
-import { FreeMode, Pagination } from "swiper"
+// import "swiper/css/free-mode"
+// import "swiper/css/pagination"
+// // import "../../.."
+// // Import required modules
+// import { FreeMode, Pagination } from "swiper"
 
 // import { getAllCourses } from "../../services/operations/courseDetailsAPI"
 import Course_Card from "./Course_Card"
@@ -20,7 +17,7 @@ function Course_Slider({ Courses }) {
   return (
     <>
       {Courses?.length ? (
-        <Swiper
+        {/* <Swiper
           slidesPerView={1}
           spaceBetween={25}
           loop={true}
@@ -37,7 +34,7 @@ function Course_Slider({ Courses }) {
               <Course_Card course={course} Height={"h-[250px]"} />
             </SwiperSlide>
           ))}
-        </Swiper>
+        </Swiper> */}
       ) : (
         <p className="text-xl text-richblack-5">No Course Found</p>
       )}

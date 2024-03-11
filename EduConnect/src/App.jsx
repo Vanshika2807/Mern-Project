@@ -25,7 +25,6 @@ import CourseDetails from "./pages/CourseDetails"
 import Dashboard from "./pages/Dashboard"
 import Error from "./pages/Error"
 import ForgotPassword from "./pages/ForgotPassword"
-
 // Pages
 import Home from "./pages/Home"
 import Login from "./pages/Login"

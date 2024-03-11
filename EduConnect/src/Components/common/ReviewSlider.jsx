@@ -1,17 +1,17 @@
 import React, { useEffect, useState } from "react"
 import ReactStars from "react-rating-stars-component"
 // Import Swiper React components
-import { Swiper, SwiperSlide } from "swiper/react"
+// import { Swiper, SwiperSlide } from "swiper/react"
 
-// Import Swiper styles
-import "swiper/css"
-import "swiper/css/free-mode"
-import "swiper/css/pagination"
-import "../../App.css"
+// // Import Swiper styles
+// import "swiper/css"
+// import "swiper/css/free-mode"
+// import "swiper/css/pagination"
+// import "../../App.css"
 // Icons
 import { FaStar } from "react-icons/fa"
 // Import required modules
-import { Autoplay, FreeMode, Pagination } from "swiper/modules"
+import { Autoplay, FreeMode, Pagination } from "swiper"
 
 // Get apiFunction and the endpoint
 import { apiConnector } from "../../services/apiConnector"
@@ -38,7 +38,7 @@ function ReviewSlider() {
   return (
     <div className="text-white">
       <div className="my-[50px] h-[184px] max-w-maxContentTab lg:max-w-maxContent">
-        <Swiper
+        {/* <Swiper
           slidesPerView={4}
           spaceBetween={25}
           loop={true}
@@ -97,8 +97,8 @@ function ReviewSlider() {
               </SwiperSlide>
             )
           })}
-          {/* <SwiperSlide>Slide 1</SwiperSlide> */}
-        </Swiper>
+          <SwiperSlide>Slide 1</SwiperSlide>
+        </Swiper> */}
       </div>
     </div>
   )
