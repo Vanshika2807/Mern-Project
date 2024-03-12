@@ -1,5 +1,4 @@
 import { useState } from "react"
-import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai"
 import { useDispatch } from "react-redux"
 import { Link, useNavigate } from "react-router-dom"
 
@@ -12,8 +11,6 @@ function LoginForm() {
     email: "",
     password: "",
   })
-
-  const [showPassword, setShowPassword] = useState(false)
 
   const { email, password } = formData
 
@@ -48,29 +45,21 @@ function LoginForm() {
           className="form-style w-full"
         />
       </label>
+
       <label className="relative">
         <p className="mb-1 text-[0.875rem] leading-[1.375rem] text-richblack-5">
           Password <sup className="text-pink-200">*</sup>
         </p>
         <input
           required
-          type={showPassword ? "text" : "password"}
+          type="password"
           name="password"
           value={password}
           onChange={handleOnChange}
           placeholder="Enter Password"
           className="form-style w-full !pr-10"
         />
-        <span
-          onClick={() => setShowPassword((prev) => !prev)}
-          className="absolute right-3 top-[38px] z-[10] cursor-pointer"
-        >
-          {showPassword ? (
-            <AiOutlineEyeInvisible fontSize={24} fill="#AFB2BF" />
-          ) : (
-            <AiOutlineEye fontSize={24} fill="#AFB2BF" />
-          )}
-        </span>
+        
         <Link to="/forgot-password">
           <p className="mt-1 ml-auto max-w-max text-xs text-blue-100">
             Forgot Password

@@ -55,9 +55,9 @@ function Home() {
         </div>
 
         {/* Video */}
-        <div className="mx-3 my-7 shadow-[10px_-5px_50px_-5px] shadow-blue-200">
+        <div className="mx-3 my-7 ">
           <video
-            className="shadow-[20px_20px_rgba(255,255,255)]"
+            
             muted
             loop
             autoPlay
@@ -92,7 +92,7 @@ function Home() {
             }}
             codeColor={"text-yellow-25"}
             codeblock={`<!DOCTYPE html>\n <html lang="en">\n<head>\n<title>This is myPage</title>\n</head>\n<body>\n<h1><a href="/">Header</a></h1>\n<nav> <a href="/one">One</a> <a href="/two">Two</a> <a href="/three">Three</a>\n</nav>\n</body>`}
-            backgroundGradient={<div className="codeblock1 absolute"></div>}
+            // backgroundGradient={<div className="codeblock1 absolute"></div>}
           />
         </div>
 
@@ -119,9 +119,9 @@ function Home() {
               link: "/signup",
               active: false,
             }}
-            codeColor={"text-white"}
+            codeColor={"text-yellow-25"}
             codeblock={`import React from "react";\n import CTAButton from "./Button";\nimport TypeAnimation from "react-type";\nimport { FaArrowRight } from "react-icons/fa";\n\nconst Home = () => {\nreturn (\n<div>Home</div>\n)\n}\nexport default Home;`}
-            backgroundGradient={<div className="codeblock2 absolute"></div>}
+            // backgroundGradient={<div className="codeblock2 absolute"></div>}
           />
         </div>
 

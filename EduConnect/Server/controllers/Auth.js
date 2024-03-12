@@ -139,7 +139,7 @@ exports.login = async (req, res) => {
       })
     }
 
-    // Generate JWT token and Compare Password
+    // Compare Password and Generate JWT token 
     if (await bcrypt.compare(password, user.password)) {
       const token = jwt.sign(
         { email: user.email, id: user._id, role: user.role },
@@ -152,6 +152,7 @@ exports.login = async (req, res) => {
       // Save token to user document in database
       user.token = token
       user.password = undefined
+
       // Set cookie for token and return success response
       const options = {
         expires: new Date(Date.now() + 3 * 24 * 60 * 60 * 1000),
