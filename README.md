@@ -53,6 +53,19 @@ The back end of StudyNotion uses a range of frameworks, libraries, and tools to 
 22.	swiper: A mobile touch slider library.
 23.	video-react: A React component library for building video players.
 24.	web-vitals: A library for measuring key performance metrics of web pages.
+25.	bcrypt: A library used for hashing,
+26.	cloudinary: It is used for storing images, videos, files.
+27.	cookie-parser: It is used to parse cookie in which the token is present
+28.	cors: CORS is a node.js package for providing a Connect/Express middleware that can be used to enable CORS with various options.
+29.	crypto": JavaScript library of crypto standards.
+30.	dotenv : Dotenv is a zero-dependency module that loads environment variables from a.env file into process.env.
+31.	express: The Express philosophy is to provide small, robust tooling for HTTP servers, making it a great solution for single page applications
+32.	express-fileupload: When you upload a file, the file will be accessible from req.files.
+33.	jsonwebtoken: it is used for make token syntax is jwt.sign(payload, secretOrPrivateKey, [options, callback])
+34.	mongoose: Mongoose is a MongoDB object modeling tool designed to work in an asynchronous environment
+35.	nodemailer: It is used to send emails
+36.	nodemon: nodemon is a tool that helps develop Node.js based applications by automatically restarting the node application when file changes in the directory are detected.
+37.	otp-generator: The package is used to generate OTP(One Time Password)
 
 # Architecture Design
 Here is a high-level diagram that illustrates the architecture of the StudyNotion ed-tech platform:
