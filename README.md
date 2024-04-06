@@ -1,5 +1,5 @@
 # StudyNotion
-StudyNotion is a fully functional ed-tech learning platform that enables users to create, consume, and rate educational content. The platform is built using the MERN stack , which includes ReactJS, NodeJS, MongoDB, and ExpressJS.
+StudyNotion is a fully functional ed-tech learning platform that enables users to create, consume, and rate educational content.
 ## StudyNotion aims to provide:
 •	A seamless and interactive learning experience for students, making education more accessible and engaging.
 •	A platform for instructors to showcase their expertise and connect with learners across the globe.
@@ -7,22 +7,14 @@ StudyNotion is a fully functional ed-tech learning platform that enables users t
 The front end of StudyNotion has all the necessary pages that an ed-tech platform should have. Some of these pages are:
 ## For Students:
 •	Homepage : This page will have a brief introduction to the platform, as well as links to the course list and user details.
-•	Course List : This page will have a list of all the courses available on the platform, along with their descriptions and ratings.
-•	Wishlist : This page will display all the courses that a student has added to their wishlist.
-•	Cart Checkout : This page will allow the user to complete the course purchase.
+•	Course List : This page will have a list of all the courses available on the platform, along with their descriptions.
 •	Course Content : This page will have the course content for a particular course, including videos, and other related material.
 •	User Details : This page will have details about the student's account, including their name, email, and other relevant information.
 •	User Edit Details : This page will allow the student to edit their account details.
 ## For Instructors:
-•	Dashboard : This page will have an overview of the instructor's courses, as well as the ratings and feedback for each course.
-•	Insights : This page will have detailed insights into the instructor's courses, including the number of views, clicks, and other relevant metrics.
+•	Dashboard : This page will have an overview of the instructor's courses and details of Instructor..
 •	Course Management Pages : These pages will allow the instructor to create, update, and delete courses, as well as manage the course content and pricing.
-•	View and Edit Profile Details : These pages will allow the instructor to view and edit their account details.
-## For Admin
-•	Dashboard : This page will have an overview of the platform's courses, instructors, and students.
-•	Insights : This page will have detailed insights into the platform's metrics, including the number of registered users, courses, and revenue.
-•	Instructor Management : This page will allow the admin to manage the platform's instructors, including their account details, courses, and ratings.
-•	Other Relevant Pages : The admin will also have access to other relevant pages, such as user management and course management pages.
+•	View and Edit Profile Details : These pages will allow the instructor to view and edit their profile details.
 # Back-end
 The back end of StudyNotion provides a range of features and functionalities, including:
 1.	User authentication and authorization : Students and instructors can sign up and log in to the platform using their email addresses and password. The platform also supports OTP (One-Time Password) verification and forgot password functionality for added security.
@@ -66,14 +58,11 @@ The back end of StudyNotion uses a range of frameworks, libraries, and tools to 
 Here is a high-level diagram that illustrates the architecture of the StudyNotion ed-tech platform:
 ![image](https://github.com/Vanshika2807/Mern-Project/assets/139116977/102e3f0d-658f-40a9-89e2-64584eb09258)
 
- 
-# Data Models & Database Schema
-The back end of StudyNotion uses a range of data models and database schemas to manage data, including:
-1.	Student schema: Includes fields such as name, email, password, and course details for each student.
-2.	Instructor schema: Includes fields such as name, email, password, and course details for each instructor.
-3.	Course schema: Includes fields such as course name, description, instructor details, and media content.
-Overall, the back-end of StudyNotion is designed to provide a robust and scalable solution for an ed-tech platform, with a focus on security, reliability, and ease of use. By using the right frameworks, libraries, and tools, we can ensure that the platform functions smoothly and provides an optimal user experience for all its users.
-
+# Deployment Link
+The StudyNotion ed-tech platform application is hosted on various cloud-based services. The front end is deployed using Vercel, a popular hosting service for static sites built with React. The back-end is deployed on Render, two cloud-based hosting services for applications built with Node.js and MongoDB. The database is hosted on MongoDB Atlas, a fully managed cloud database service.
+## Link for StudyNotion
+https://study-notion-frontened.vercel.app/
+you can easily access this link and perform as many operations you want as an Instructor or Student.
 # Installation and Setup
 This starter pack includes a basic setup for using Tailwind CSS with React. To start building your own components and styles, follow these steps:
 1.	Clone the repository to your local machine.
